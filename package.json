@@ -1,0 +1,55 @@
+{
+  "name": "wp-detect",
+  "description": "A simple CLI to do a shallow detection of WordPress plugins and themes at a given URL.",
+  "version": "0.1.0",
+  "author": "Rheinard Korf",
+  "bin": {
+    "wp-detect": "./bin/run"
+  },
+  "bugs": "https://github.com/rheinardkorf/wp-detect/issues",
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.26.0",
+    "@types/node": "^10.17.55",
+    "@types/node-fetch": "^2.5.8",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.1.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.9"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "homepage": "https://github.com/rheinardkorf/wp-detect",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "theme",
+    "detection"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "bin": "wp-detect"
+  },
+  "repository": "rheinardkorf/wp-detect",
+  "scripts": {
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/plugin-help": "^3.2.2",
+    "cheerio": "^1.0.0-rc.5",
+    "node-fetch": "^2.6.1",
+    "tslib": "^1.14.1"
+  }
+}
